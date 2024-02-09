@@ -1,0 +1,31 @@
+name: quickui
+homepage:
+  https://github:com/kshatriyaArjunDeveloper/quickui
+description: Make UI quickly, easily, and neatly.
+issue_tracker: https://github.com/kshatriyaArjunDeveloper/quickui/issues
+version: 1.0.0
+
+topics:
+  - ui
+  - fast
+  - easy
+  - utility
+  - helper
+
+environment:
+  sdk: '>=2.18.2 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # To make gradient borders
+  gradient_borders: ^1.0.0
+  # To load Svg files
+  flutter_svg: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
