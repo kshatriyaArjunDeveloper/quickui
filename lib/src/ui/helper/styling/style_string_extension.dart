@@ -18,18 +18,12 @@ extension Style on String {
   }
 
   Color clr() {
-    String colorString = this;
-    if (colorString == null || colorString.isEmpty) {
-      // Return a default color (e.g., black) if the input is invalid
-      return Colors.black;
-    }
-
-    // Remove the '#' character from the beginning of the string
-    if (colorString[0] == '#') {
-      colorString = colorString.substring(1);
-    }
-
     try {
+      String colorString = this;
+      // Remove the '#' character from the beginning of the string
+      if (colorString[0] == '#') {
+        colorString = colorString.substring(1);
+      }
       // Parse the color string as an integer and create a Color object
       return Color(int.parse('0xFF$colorString'));
     } catch (e) {
