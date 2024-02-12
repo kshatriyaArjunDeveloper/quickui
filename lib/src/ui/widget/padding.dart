@@ -3,7 +3,7 @@ import 'package:quickui/src/ui/interface/ui_interface.dart';
 
 class Padding_ extends StatelessWidget implements PaddingInterface {
   Padding_({
-    Key? key,
+    super.key,
     // Padding
     this.leftPadding,
     this.rightPadding,
@@ -13,7 +13,7 @@ class Padding_ extends StatelessWidget implements PaddingInterface {
     this.horizontalPadding,
     this.allPadding,
     this.child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
