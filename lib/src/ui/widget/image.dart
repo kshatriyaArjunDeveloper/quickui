@@ -15,6 +15,10 @@ class Image_ extends StatelessWidget {
   final Color? svgColor;
   final Gradient? iconGradient;
 
+  // Other attributes
+  final BoxFit boxFit;
+  final Widget? placeholder;
+
   const Image_({
     super.key,
     this.localSvgAsset,
@@ -23,6 +27,8 @@ class Image_ extends StatelessWidget {
     this.width,
     this.svgColor,
     this.iconGradient,
+    this.placeholder,
+    this.boxFit = BoxFit.contain,
   });
 
   @override
@@ -47,6 +53,9 @@ class Image_ extends StatelessWidget {
   Widget _buildNetworkImage() {
     return CachedNetworkImage(
       imageUrl: imageUrl!,
+      fit: boxFit,
+      errorWidget: (context, url, error) => _buildPlaceholder(),
+      placeholder: (context, url) => _buildPlaceholder(),
       height: height,
       width: width,
     );
@@ -73,8 +82,15 @@ class Image_ extends StatelessWidget {
       localSvgAsset!,
       height: height,
       width: width,
-      fit: BoxFit.contain,
+      fit: boxFit,
       color: isMaskingGradient ? Colors.white : svgColor,
     );
+  }
+
+  Widget _buildPlaceholder() {
+    return placeholder ??
+        Container_(
+          color: Colors.white,
+        );
   }
 }
