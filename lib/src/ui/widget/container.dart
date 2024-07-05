@@ -10,8 +10,11 @@ class Container_ extends StatelessWidget
         BaseStructureInterface {
   Container_({
     Key? key,
-    //Styling
+    // Styling
     this.gradient,
+    this.boxShadowList,
+    this.shouldMakeCircle = false,
+    // Background Image
     this.backgroundImageAssetName,
     this.backgroundImageFit = BoxFit.cover,
     this.backgroundImageAlignment = Alignment.center,
@@ -33,17 +36,16 @@ class Container_ extends StatelessWidget
     this.allPadding,
     // Border
     this.shouldMakeBorderOutside = false,
+    this.borderColor,
+    this.borderWidth,
     this.borderGradient,
+    // Corner
     this.bottomLeftRadius,
     this.bottomRightRadius,
     this.topLeftRadius,
     this.topRightRadius,
     this.allCornerRadius,
-    this.boxShadowList,
-    this.borderColor,
-    this.borderWidth,
     // Basic
-    this.shouldMakeCircle = false,
     this.height,
     this.width,
     this.color,
