@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quickui/quickui.dart';
 
+import 'container_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -18,18 +20,17 @@ class HomeScreen extends StatelessWidget {
           bottomRightRadius: 8,
           color: Theme.of(context).colorScheme.inversePrimary,
           child: const Text('Custom container').onClick(() {
-            _showToast(context, 'onClick() working');
+            _navigateToContainerScreen(context);
           }),
         ),
       ),
     );
   }
 
-  void _showToast(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(seconds: 2),
+  void _navigateToContainerScreen(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const ContainerScreen(),
       ),
     );
   }
