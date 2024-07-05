@@ -7,7 +7,7 @@ It simplifies the most commonly used widgets, methods, and use cases to build UI
 
 This package includes: 
 
-**Modified standard widget of flutter**
+**Modified standard widgets of flutter**
 
 *   [Container widget](#container_)
 *   [Animated Container widget](#animatedContainer_)
