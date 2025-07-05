@@ -1,0 +1,16 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "example (Flutter Pixel 6a)",
+            "program": "lib/main.dart",
+            "cwd": "example",
+            "deviceId": "2A031JEGR11403",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
