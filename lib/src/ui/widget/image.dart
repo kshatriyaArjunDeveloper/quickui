@@ -7,6 +7,17 @@ class Image_ extends StatelessWidget {
   final double? height;
   final double? width;
 
+  /// Asset image name to display a local image from the assets folder.
+  /// 
+  /// Supported image formats:
+  /// • PNG
+  /// • JPG / JPEG  
+  /// • GIF
+  /// • BMP
+  /// • WBMP
+  /// • WebP (Android only by default; limited support on iOS)
+  final String? assetName;
+
   // Image related
   final String? imageUrl;
 
@@ -18,9 +29,11 @@ class Image_ extends StatelessWidget {
   // Other attributes
   final BoxFit boxFit;
   final Widget? placeholder;
+  final Alignment alignment;
 
   const Image_({
     super.key,
+    this.assetName,
     this.localSvgAsset,
     this.imageUrl,
     this.height,
@@ -29,6 +42,7 @@ class Image_ extends StatelessWidget {
     this.iconGradient,
     this.placeholder,
     this.boxFit = BoxFit.contain,
+    this.alignment = Alignment.center,
   });
 
   @override
@@ -45,6 +59,8 @@ class Image_ extends StatelessWidget {
       return _buildNetworkImage();
     } else if (localSvgAsset != null) {
       return _buildSvgImage();
+    } else if (assetName != null) {
+      return _buildAssetImage();
     } else {
       return Container_();
     }
@@ -58,6 +74,7 @@ class Image_ extends StatelessWidget {
       placeholder: (context, url) => _buildPlaceholder(),
       height: height,
       width: width,
+      alignment: alignment,
     );
   }
 
@@ -84,6 +101,18 @@ class Image_ extends StatelessWidget {
       width: width,
       fit: boxFit,
       color: isMaskingGradient ? Colors.white : svgColor,
+      alignment: alignment,
+    );
+  }
+
+  Widget _buildAssetImage() {
+    return Image.asset(
+      assetName!,
+      height: height,
+      width: width,
+      fit: boxFit,
+      errorBuilder: (context, error, stackTrace) => _buildPlaceholder(),
+      alignment: alignment,
     );
   }
 
