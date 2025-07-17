@@ -100,7 +100,11 @@ class Image_ extends StatelessWidget {
       height: height,
       width: width,
       fit: boxFit,
-      color: isMaskingGradient ? Colors.white : svgColor,
+      colorFilter: isMaskingGradient
+          ? const ColorFilter.mode(Colors.white, BlendMode.srcIn)
+          : (svgColor != null
+              ? ColorFilter.mode(svgColor!, BlendMode.srcIn)
+              : null),
       alignment: alignment,
     );
   }

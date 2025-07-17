@@ -68,6 +68,7 @@ flutter:
     - asset/img_bg_auth_universal.png
     - asset/ic_name.svg
     - asset/gif_name.gif
+    - asset/ic_long_right_arrow.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

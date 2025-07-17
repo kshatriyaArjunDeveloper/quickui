@@ -43,10 +43,10 @@ class ImageScreen extends StatelessWidget {
 
   Widget _buildSvgImage() {
     return const Image_(
-      localSvgAsset: 'asset/ic_name.svg',
+      localSvgAsset: 'asset/ic_long_right_arrow.svg',
       height: 100,
       width: 100,
-
+      svgColor: Colors.green,
     );
   }
 
